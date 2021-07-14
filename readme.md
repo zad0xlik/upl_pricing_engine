@@ -1,11 +1,18 @@
-Inputs/Assumptions					
-Term		36	Holding Days		2.8
-Grade		C	WebBank Fee		0.00%
-Interest Rate		14.17%	Servicing Fee (P&I)		1.00%
-Recovery Rate		9.50%	Servicing Fee (UPB)		0.00%
-			Effective Collection Fee		0.12%
-			Recovery Fee		18%
+#### Inputs: 
 
+| Inputs/Assumptions          | Values         |
+| --------------------------- | -------------- |
+| Term                        | 36             |
+| Grade                       | C              |
+| Interest Rate               | 14.17%         |
+| Recovery Rate               | 9.50%          |
+| Recovery Fee                | 18%            |
+| Effective Collection Fee    | 0.12%          |
+| Holding Days                | 2.8            |
+| InterBank Fee               | 0.00%          |
+| Servicing Fee (P&I)         | 1.00%          |
+| Servicing Fee (UPB)         | 0.00%          |
+			
 
 Results											
 			Measure of Returns…						IRR	"Yield"	NAR
