@@ -6,7 +6,6 @@ eval $(printenv | awk -F= '{print "export " "\""$1"\"""=""\""$2"\"" }' >> /etc/p
 printenv | awk -F= '{print "export " "\""$1"\"""=""\""$2"\"" }'
 
 echo "pass through variables: "
-echo $AWS_DEFAULT_REGION
 echo $ENV_BUILD
 echo $PROJECT_NAME
 echo $REDIS_URL
