@@ -3,7 +3,6 @@ import pandas as pd
 import numpy as np
 import numpy_financial as npf
 
-
 def ProjectingReturn(
             Term, # Term in months
             Interest_Rate, # Annual Interest Rate
@@ -158,5 +157,11 @@ def ProjectingReturn(
     DURATION_MODIFIED = DURATION_MACAULY/(1+IRR/12)
 
     DURATION = DURATION_MODIFIED
-            
-    return CF, SMM, CPR, MDR, CDR, DPOR, DCOR, GCL, NCL, ACL, IRR, YIELD, NAR, DURATION
+
+    results = dict()
+
+    results['IRR'] = IRR
+    # results['SMM'] = SMM
+
+    # CF, SMM, CPR, MDR, CDR, DPOR, DCOR, GCL, NCL, ACL, IRR, YIELD, NAR, DURATION
+    return results
