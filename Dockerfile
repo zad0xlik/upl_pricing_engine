@@ -6,6 +6,8 @@ WORKDIR $HOME/irr
 
 EXPOSE 5000
 EXPOSE 8888
+EXPOSE 6379
+#EXPOSE 9181
 
 ENTRYPOINT [ "/bin/bash", "-c" ]
 
@@ -65,5 +67,13 @@ COPY requirements.txt /tmp/
 RUN pip install -r /tmp/requirements.txt
 
 RUN ["chmod", "+x", "proc_exec.sh"]
+
+ARG ENV_BUILD
+ARG PROJECT_NAME
+ARG REDIS_URL
+
+ENV ENV_BUILD $ENV_BUILD
+ENV PROJECT_NAME $PROJECT_NAME
+ENV REDIS_URL $REDIS_URL
 
 CMD ["./proc_exec.sh"]

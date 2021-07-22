@@ -1,3 +1,16 @@
+#### Ports open on:
+```
+EXPOSE 5000 - rest api - used for calling requests to container  
+EXPOSE 8888 - jupyterlab - if code inside of the container should be modified while running (experimental)
+EXPOSE 6379 - redis-server - redis server for tracking jobs and/or parallel requests
+EXPOSE 9181 - rq-dashboard - redis dashboard to track jobs
+```
+
+#### Build image on local:
+```shell script
+sh build_image_local.sh
+```
+
 #### Inputs: 
 
 | Inputs/Assumptions          | Values         |
