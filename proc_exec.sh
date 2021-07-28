@@ -154,8 +154,8 @@ if [ $PROJECT_NAME = "pricing-api" ]; then
 
   wait $RQDASH
   wait $WORKER
-  wait $JPTRLB
   wait $GUNICO
+  wait $JPTRLB
 
 fi
 

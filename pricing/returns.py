@@ -1,4 +1,3 @@
-import os
 import pandas as pd
 import numpy as np
 import numpy_financial as npf
@@ -108,8 +107,6 @@ def ProjectingReturn(
                     MDR,CDR,
                     DPOR,DCOR]
     
-    #return CF, CF[['MOB','SMM']], CF[['MOB','CPR']], CF[['MOB','MDR']], CF[['MOB','CDR']], CF[['MOB','DPOR']], CF[['MOB','DCOR']]
-
     # Calculating Risk Measures
     SMM = CF[['MOB','SMM']]
     CPR = CF[['MOB','CPR']]
@@ -159,9 +156,20 @@ def ProjectingReturn(
     DURATION = DURATION_MODIFIED
 
     results = dict()
-
+    results['CF'] = CF.to_dict()
+    results['SMM'] = SMM.to_dict()
+    results['CPR'] = CPR.to_dict()
+    results['MDR'] = MDR.to_dict()
+    results['CDR'] = CDR.to_dict()
+    results['DPOR'] = DPOR.to_dict()
+    results['DCOR'] = DCOR.to_dict()
+    results['GCL'] = GCL
+    results['NCL'] = NCL
+    results['ACL'] = ACL
     results['IRR'] = IRR
-    # results['SMM'] = SMM
+    results['YIELD'] = YIELD
+    results['NAR'] = NAR
+    results['DURATION'] = DURATION
 
     # CF, SMM, CPR, MDR, CDR, DPOR, DCOR, GCL, NCL, ACL, IRR, YIELD, NAR, DURATION
     return results

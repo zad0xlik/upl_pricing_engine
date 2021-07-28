@@ -6,6 +6,11 @@ EXPOSE 6379 - redis-server - redis server for tracking jobs and/or parallel requ
 EXPOSE 9181 - rq-dashboard - redis dashboard to track jobs
 ```
 
+#### Make sure ports are free:
+```shell script
+nc -z 127.0.0.1 8888 && echo "IN USE" || echo "FREE"
+```
+
 #### Build image on local:
 ```shell script
 sh build_image_local.sh

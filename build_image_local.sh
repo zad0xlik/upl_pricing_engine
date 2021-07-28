@@ -16,6 +16,6 @@ docker build -t ${TAG_NAME} -f Dockerfile \
   --build-arg PYTHON_VERSION_TAG=3.8.6 \
   --build-arg LINK_PYTHON_TO_PYTHON3=1 .
 
-docker run -p 5000:5000 -p 8888:8888 -p 6379:6379 -p 9181:9181 ${TAG_NAME}:latest
+docker run -p 8888:8888 -p 5000:5000 -p 6379:6379 -p 9181:9181 ${TAG_NAME}:latest
 
 
