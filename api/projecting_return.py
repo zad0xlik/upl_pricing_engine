@@ -16,8 +16,8 @@ class ProjectingReturnAPI(Resource):
         output = request.json
         Term = output['term']
         Interest_Rate = output['interest_rate']
-        UPOR_Curve = output['upor_curve']
-        UCOR_Curve = output['ucor_curve']
+        UPOR_Curve = list(map(float, output['upor_curve'].split(",")))
+        UCOR_Curve = list(map(float, output['ucor_curve'].split(",")))
         Recovery_Rate = output['recovery_rate']
         Effective_Collection_Fee = output['effective_collection_fee']
         Recovery_Fee = output['recovery_fee']
@@ -28,8 +28,8 @@ class ProjectingReturnAPI(Resource):
 
         # Term = 36
         # Interest_Rate = 7.2/100
-        # UPOR_Curve=[0.005,0.009,0.004,0.007,0.004,0.01,0.004,0.008,0.009,0.006,0.006,0.007,0.005,0.004,0.009,0.004,0.008,0.007,0.005,0.006,0.01,0.01,0.005,0.009,0.004,0.007,0.004,0.01,0.01,0.005,0.009,0.004,0.007,0.004,0.01,0.004] # Unit Paid-off Rate
-        # UCOR_Curve=[0,0,0.0018,0.0028,0.003,0.003,0.0028,0.0027,0.0025,0.0024,0.0022,0.0021,0.002,0.0019,0.0018,0.0017,0.0016,0.0015,0.0014,0.0014,0.0013,0.0012,0.0012,0.0011,0.0011,0.001,0.001,0.0009,0.0009,0.0009,0.0008,0.0008,0.0008,0.0007,0.0007,0.0007] # Unit Charge-off Rate
+        #         UPOR_Curve=[0.005,0.009,0.004,0.007,0.004,0.01,0.004,0.008,0.009,0.006,0.006,0.007,0.005,0.004,0.009,0.004,0.008,0.007,0.005,0.006,0.01,0.01,0.005,0.009,0.004,0.007,0.004,0.01,0.01,0.005,0.009,0.004,0.007,0.004,0.01,0.004] # Unit Paid-off Rate
+        #         UCOR_Curve=[0,0,0.0018,0.0028,0.003,0.003,0.0028,0.0027,0.0025,0.0024,0.0022,0.0021,0.002,0.0019,0.0018,0.0017,0.0016,0.0015,0.0014,0.0014,0.0013,0.0012,0.0012,0.0011,0.0011,0.001,0.001,0.0009,0.0009,0.0009,0.0008,0.0008,0.0008,0.0007,0.0007,0.0007] # Unit Charge-off Rate
         # Recovery_Rate = .095
         # Effective_Collection_Fee = .0003
         # Recovery_Fee = .18
@@ -53,8 +53,3 @@ class ProjectingReturnAPI(Resource):
         )
 
         return results
-
-
-
-
-
