@@ -102,7 +102,6 @@ if [ $PROJECT_NAME = "pricing-api" ]; then
     echo '-------------------------------'
     echo "Spinning up redis-server for local environment"
 
-    echo "Spinning up redis-server for local environment"
     # For Local Testing, Start the first redis server process
     redis-server --protected-mode no --port 6379 &
     REDISS=$!
@@ -121,12 +120,12 @@ if [ $PROJECT_NAME = "pricing-api" ]; then
     echo '-------------------------------'
   fi
 
-  rq-dashboard -u $REDIS_URL --port 9181 & RQDASH=$!
-  status=$?
-  if [ $status -ne 0 ]; then
-    echo "Failed to start rq dashboard: $status"
-    exit $status
-  fi
+#  rq-dashboard -u $REDIS_URL --port 9181 & RQDASH=$!
+#  status=$?
+#  if [ $status -ne 0 ]; then
+#    echo "Failed to start rq dashboard: $status"
+#    exit $status
+#  fi
 
   # Start the rq worker process
   python worker.py & WORKER=$!
@@ -152,7 +151,7 @@ if [ $PROJECT_NAME = "pricing-api" ]; then
     exit $status
   fi
 
-  wait $RQDASH
+#  wait $RQDASH
   wait $WORKER
   wait $GUNICO
   wait $JPTRLB
