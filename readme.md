@@ -2,6 +2,7 @@
 All loan-related yields, durations, convexities and holding-period returns should be calculated uniformly on a 
 semiannual-compounding basis, regardless of the frequency of the actual cash flows used in computing these measures.
 
+need to test 360 months
 
 #### Ports open on:
 ```
